@@ -1,20 +1,11 @@
-import React, { ReactElement } from 'react';
+import { ShowHideMenu } from '../../../types';
 
-function BurgerLines(): ReactElement<HTMLSpanElement> {
+const BurgerLines = ({ menuActive }: ShowHideMenu) => {
     return (
-	<span className="burger__line">
-
-	</span>);
-}
-
-function Burger(): ReactElement<HTMLDivElement> {
-    return (
-        <div className="nav__burger burger">
-            <BurgerLines />
-            <BurgerLines />
-            <BurgerLines />
-        </div>
+        <span
+            className={menuActive ? 'burger__line_active' : 'burger__line'}
+        ></span>
     );
-}
+};
 
-export default Burger;
+export default BurgerLines;

@@ -130,17 +130,24 @@ body {
     }
 
     &__burger {
+        cursor: pointer;
         width: 20px;
         height: 36px;
         padding: 13px 0;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        
     }
 
     &__menu {
         display: block;
         visibility: visible;
+        transform: translate(-200%);
+
+        &_active {
+            transform: translate(0);
+        }
     }
 }
 
