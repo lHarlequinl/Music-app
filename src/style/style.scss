@@ -428,7 +428,9 @@ body {
     }
 
     &__time {
-        width: 60px;
+        position: relative;
+        width: 61px;
+        overflow: hidden;
     }
 
     &__time-wrapper {
@@ -498,6 +500,10 @@ body {
         width: 250px;
         height: 150px;
 
+        &_load {
+            background-color: #313131;
+        }
+
         &:not(:last-child) {
             margin-bottom: 30px;
         }
@@ -511,6 +517,10 @@ body {
     &__img {
         width: 100%;
         height: auto;
+
+        &_load {
+            opacity: 0;
+        }
     }
 }
 

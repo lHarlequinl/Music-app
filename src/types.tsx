@@ -20,6 +20,7 @@ export interface SidebarItem {
     href: string;
     src: string;
     alt: string;
+    isLoading?: true | false;
 }
 
 export interface UserInfo {
