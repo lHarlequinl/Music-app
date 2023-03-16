@@ -1,12 +1,8 @@
-import React, { FC } from 'react';
+import React from 'react';
+import {SidebarItem} from '../../../types'
 
-interface SidebarItem {
-    href: string;
-    src: string;
-    alt: string;
-}
 
-const SidebarListItem: FC<SidebarItem> = ({ href, src, alt }) => {
+const SidebarListItem = ({ href, src, alt }: SidebarItem) => {
     return (
         <div className="sidebar__item">
             <a className="sidebar__link" href={href}>
@@ -16,7 +12,7 @@ const SidebarListItem: FC<SidebarItem> = ({ href, src, alt }) => {
     );
 };
 
-const SidebarList: FC = () => {
+const SidebarList = () => {
     return (
         <div className="sidebar__list">
             <SidebarListItem

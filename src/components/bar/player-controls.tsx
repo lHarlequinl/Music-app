@@ -1,31 +1,21 @@
-import React, { FC } from 'react';
+import React from 'react';
 import SvgImage from '../svg-image';
+import { ControlButtonsProps } from '../../types';
 
-interface ControlButtonsProps {
-    className: string;
-    imageClassName: string;
-    imageHref: string;
-    ariaLabel: string;
-}
-
-const ControlsButton: FC<ControlButtonsProps> = ({
+const ControlsButton = ({
     className,
     imageClassName,
     imageHref,
     ariaLabel,
-}) => {
+}: ControlButtonsProps) => {
     return (
         <div className={className}>
-            <SvgImage
-                className={imageClassName}
-                href={imageHref}
-                ariaLabel={ariaLabel}
-            />
+                <SvgImage href={imageHref} ariaLabel={ariaLabel} />
         </div>
     );
 };
 
-const PlayerControls: FC = () => {
+const PlayerControls = () => {
     return (
         <div className="player__controls">
             <ControlsButton
@@ -34,25 +24,25 @@ const PlayerControls: FC = () => {
                 imageHref="img/icon/sprite.svg#icon-prev"
                 ariaLabel="prev"
             />
-			<ControlsButton
+            <ControlsButton
                 className="player__btn-play _btn"
                 imageClassName="player__btn-play-svg"
                 imageHref="img/icon/sprite.svg#icon-play"
                 ariaLabel="play"
             />
-			<ControlsButton
+            <ControlsButton
                 className="player__btn-next _btn"
                 imageClassName="player__btn-next-svg"
                 imageHref="img/icon/sprite.svg#icon-next"
                 ariaLabel="next"
             />
-			<ControlsButton
+            <ControlsButton
                 className="player__btn-repeat _btn-icon _btn"
                 imageClassName="player__btn-repeat-svg"
                 imageHref="img/icon/sprite.svg#icon-repeat"
                 ariaLabel="repeat"
             />
-			<ControlsButton
+            <ControlsButton
                 className="player__btn-shuffle _btn-icon"
                 imageClassName="player__btn-shuffle-svg"
                 imageHref="img/icon/sprite.svg#icon-shuffle"

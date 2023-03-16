@@ -4,11 +4,13 @@ import SvgImage from '../../svg-image';
 function Search(): ReactElement<HTMLDivElement> {
     return (
         <div className="centerblock__search search">
-            <SvgImage
-                className="search__svg"
-                href="img/icon/sprite.svg#icon-search"
-                ariaLabel="search"
-            />
+            <div className="search__svg">
+                <SvgImage
+                    href="img/icon/sprite.svg#icon-search"
+                    ariaLabel="search"
+                />
+            </div>
+
             <input
                 className="search__text"
                 type="search"
