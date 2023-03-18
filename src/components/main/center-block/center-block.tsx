@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import Search from './search';
-import Filter from './filter';
+import Filter from '../../../components/UI/filter/filter';
 import Content from './content';
 
 function CenterBlock(): ReactElement<HTMLDivElement> {

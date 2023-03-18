@@ -57,3 +57,8 @@ export interface LogoProps {
     src: string;
     alt: string;
 }
+
+export interface FilterProps {
+    text: string,
+    isActive: boolean
+}
