@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import FilterItemYears from './filter-item-years';
-import { TextsElements } from '../../../types';
 import FilterItem from './filter-item';
-import { trackData } from '../../main/center-block/playlist/track-data';
+import { trackData, genre } from '../../main/center-block/playlist/track-data';
 import FilterCategories from './filter-categories';
 
 const Filter = () => {
@@ -30,15 +29,6 @@ const Filter = () => {
         setYearActive(false);
         setGenreActive(!genreActive);
     };
-
-    const genre: string[] = [
-        'Рок',
-        'Хип-Хоп',
-        'Джаз',
-        'Альтернатива',
-        'Рэп',
-        'Классическая',
-    ];
 
     return (
         <div className="centerblock__filter filter">

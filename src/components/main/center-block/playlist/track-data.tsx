@@ -1,5 +1,14 @@
 import { PlaylistItemProps } from '../../../../types';
 
+export const genre: string[] = [
+    'Рок',
+    'Хип-Хоп',
+    'Джаз',
+    'Альтернатива',
+    'Рэп',
+    'Классическая',
+];
+
 export const trackData: PlaylistItemProps[] = [
     {
         trackTitleLink: 'https://',
