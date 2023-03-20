@@ -1,10 +1,10 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import Navigation from './navigation/navigation';
 import CentrBlock from './center-block/center-block';
 import Bar from '../bar/bar';
 import Sidebar from './sidebar/sidebar';
 
-const Main = (): ReactElement<HTMLDivElement> => {
+const Main = () => {
     return (
         <main className="main">
             <Navigation />

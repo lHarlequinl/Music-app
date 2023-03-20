@@ -1,14 +1,9 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
+import {Svg} from '../types'
 
-interface Svg {
-    className: string;
-    href: string;
-    ariaLabel: string;
-}
-
-function SvgImage({className, href,ariaLabel,}: Svg): ReactElement<HTMLOrSVGImageElement> {
+const  SvgImage = ({ href,ariaLabel,}: Svg) => {
     return (
-        <svg className={className} aria-label={ariaLabel}>
+        <svg aria-label={ariaLabel}>
             <use xlinkHref={href}></use>
         </svg>
     );

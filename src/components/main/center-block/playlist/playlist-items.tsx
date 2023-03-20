@@ -1,10 +1,22 @@
-import React, { ReactElement } from 'react';
+import React, { useEffect, useState } from 'react';
 import PlaylistItem from './playlist-item';
 
-function PlaylistItems(): ReactElement<HTMLDivElement> {
+const PlaylistItems = () => {
+    const [status, setStatus] = useState<boolean>(true);
+    useEffect(() => {
+        const loadTimer = setTimeout(() => {
+            setStatus(false);
+        }, 5000);
+        return () => {
+            clearTimeout(loadTimer);
+        };
+    });
+
     return (
         <div className="content__playlist playlist">
             <PlaylistItem
+                isLoading={status}
+
                 trackTitleLink="http://"
                 trackTitleText="Guilt"
                 trackAuthorLink="http://"
@@ -14,6 +26,8 @@ function PlaylistItems(): ReactElement<HTMLDivElement> {
                 trackTime="4:44"
             />
             <PlaylistItem
+                isLoading={status}
+
                 trackTitleLink="http://"
                 trackTitleText="Elektro"
                 trackAuthorLink="http://"
@@ -23,6 +37,8 @@ function PlaylistItems(): ReactElement<HTMLDivElement> {
                 trackTime="2:22"
             />
 			<PlaylistItem
+                isLoading={status}
+
                 trackTitleLink="http://"
                 trackTitleText="I’m Fire"
                 trackAuthorLink="http://"
@@ -32,6 +48,8 @@ function PlaylistItems(): ReactElement<HTMLDivElement> {
                 trackTime="2:22"
             />
 			<PlaylistItem
+                isLoading={status}
+
                 trackTitleLink="http://"
                 trackTitleText="Non Stop"
                 trackAuthorLink="http://"
@@ -41,6 +59,8 @@ function PlaylistItems(): ReactElement<HTMLDivElement> {
                 trackTime="4:12"
             />
 			<PlaylistItem
+                isLoading={status}
+
                 trackTitleLink="http://"
                 trackTitleText="Run Run"
                 trackAuthorLink="http://"
@@ -50,6 +70,8 @@ function PlaylistItems(): ReactElement<HTMLDivElement> {
                 trackTime="2:54"
             />
 			<PlaylistItem
+                isLoading={status}
+
                 trackTitleLink="http://"
                 trackTitleText="Eyes on Fire"
                 trackAuthorLink="http://"
@@ -59,6 +81,8 @@ function PlaylistItems(): ReactElement<HTMLDivElement> {
                 trackTime="5:20"
             />
 			<PlaylistItem
+                isLoading={status}
+
                 trackTitleLink="http://"
                 trackTitleText="Mucho Bien"
                 trackAuthorLink="http://"
@@ -68,6 +92,8 @@ function PlaylistItems(): ReactElement<HTMLDivElement> {
                 trackTime="3:41"
             />
 			<PlaylistItem
+                isLoading={status}
+
                 trackTitleLink="http://"
                 trackTitleText="Knives n Cherries"
                 trackAuthorLink="http://"
@@ -77,6 +103,8 @@ function PlaylistItems(): ReactElement<HTMLDivElement> {
                 trackTime="1:48"
             />
 			<PlaylistItem
+                isLoading={status}
+
                 trackTitleLink="http://"
                 trackTitleText="How Deep Is Your Love"
                 trackAuthorLink="http://"
@@ -86,6 +114,8 @@ function PlaylistItems(): ReactElement<HTMLDivElement> {
                 trackTime="3:32"
             />
 			<PlaylistItem
+                isLoading={status}
+
                 trackTitleLink="http://"
                 trackTitleText="Morena"
                 trackAuthorLink="http://"

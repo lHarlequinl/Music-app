@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './style/style.scss';
 import Main from './components/main/main';
@@ -7,7 +7,7 @@ const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
 
-function Container(): ReactElement<HTMLDivElement> {
+const Container = () => {
     return (
         <div className="wrapper">
             <div className="container">

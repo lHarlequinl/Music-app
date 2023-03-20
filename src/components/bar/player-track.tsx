@@ -1,54 +1,66 @@
-import React, { FC } from 'react';
+import React from 'react';
 import SvgImage from '../svg-image';
+import { Track } from '../../types';
+import SkeletonImage from '../UI/skeletons/skeleton-img';
+import SkeletonTitle from '../UI/skeletons/skeleton-title';
 
-interface Track {
-    trackLink: string;
-    trackName: string;
-    authorLink: string;
-    authorName: string;
-}
-
-const PlayerTrack: FC<Track> = ({
+const PlayerTrack = ({
     trackLink,
     trackName,
     authorLink,
     authorName,
-}) => {
+    isLoading,
+}: Track) => {
     return (
         <div className="player__track-play track-play">
             <div className="track-play__contain">
-                <div className="track-play__image">
-                    <SvgImage
-                        className="track-play__svg"
-                        href="img/icon/sprite.svg#icon-note"
-                        ariaLabel="music"
-                    />
+                <div className="track-play__image-wrapper">
+                    {isLoading === true ? (
+                        <SkeletonImage />
+                    ) : (
+                        <div className="track-image">
+                            <SvgImage
+                                href="img/icon/sprite.svg#icon-note"
+                                ariaLabel="music"
+                            />
+                        </div>
+                    )}
                 </div>
                 <div className="track-play__author">
-                    <a className="track-play__author-link" href={trackLink}>
-                        {trackName}
-                    </a>
+                    {isLoading === true ? (
+                        <SkeletonTitle />
+                    ) : (
+                        <a className="track-play__author-link" href={trackLink}>
+                            {trackName}
+                        </a>
+                    )}
                 </div>
                 <div className="track-play__album">
-                    <a className="track-play__album-link" href={authorLink}>
-                        {authorName}
-                    </a>
+                    {isLoading === true ? (
+                        <SkeletonTitle />
+                    ) : (
+                        <a className="track-play__album-link" href={authorLink}>
+                            {authorName}
+                        </a>
+                    )}
                 </div>
             </div>
             <div className="track-play__like-dis">
                 <div className="track-play__like _btn-icon">
-                    <SvgImage
-                        className="track-play__like-svg"
-                        href="img/icon/sprite.svg#icon-like"
-                        ariaLabel="like"
-                    />
+                    <div className="track-play__like-svg">
+                        <SvgImage
+                            href="img/icon/sprite.svg#icon-like"
+                            ariaLabel="like"
+                        />
+                    </div>
                 </div>
                 <div className="track-play__dislike _btn-icon">
-                    <SvgImage
-                        className="track-play__dislike-svg"
-                        href="img/icon/sprite.svg#icon-dislike"
-                        ariaLabel="dislike"
-                    />
+                    <div className="track-play__dislike-svg">
+                        <SvgImage
+                            href="img/icon/sprite.svg#icon-dislike"
+                            ariaLabel="dislike"
+                        />
+                    </div>
                 </div>
             </div>
         </div>
