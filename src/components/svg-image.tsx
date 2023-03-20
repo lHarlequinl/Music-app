@@ -1,7 +1,7 @@
 import React from 'react';
 import {Svg} from '../types'
 
-const  SvgImage = ({ href,ariaLabel,}: Svg) => {
+const  SvgImage = ({ href, ariaLabel}: Svg) => {
     return (
         <svg aria-label={ariaLabel}>
             <use xlinkHref={href}></use>
