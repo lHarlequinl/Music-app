@@ -62,3 +62,8 @@ export interface FilterProps {
     text: string,
     isActive: boolean
 }
+
+export interface FilterItemProps {
+    text: string;
+    href: string;
+}

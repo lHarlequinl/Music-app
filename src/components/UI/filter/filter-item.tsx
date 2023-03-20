@@ -1,9 +1,5 @@
 import React from 'react';
-
-interface FilterItemProps {
-    text: string;
-    href: string;
-}
+import { FilterItemProps } from '../../../types';
 
 const FilterItem = ({ text, href }: FilterItemProps) => {
     return (

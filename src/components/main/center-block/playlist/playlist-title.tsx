@@ -1,15 +1,15 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import SvgImage from '../../../svg-image';
 import { TextsElements } from '../../../../types';
 
-function PlaylistTitles({
+const PlaylistTitles = ({
     className,
     text,
-}: TextsElements): ReactElement<HTMLDivElement> {
+}: TextsElements) => {
     return <div className={className}>{text}</div>;
 }
 
-function PlaylistTitle(): ReactElement<HTMLDivElement> {
+const PlaylistTitle = () => {
     return (
         <div className="content__title playlist-title">
             <PlaylistTitles

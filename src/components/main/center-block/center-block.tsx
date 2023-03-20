@@ -1,9 +1,9 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import Search from './search';
 import Filter from '../../../components/UI/filter/filter';
 import Content from './content';
 
-function CenterBlock(): ReactElement<HTMLDivElement> {
+const CenterBlock = () => {
     return (
 	<div className="main__centerblock centerblock">
 		<Search/>

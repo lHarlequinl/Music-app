@@ -1,7 +1,7 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import SvgImage from '../../svg-image';
 
-function Search(): ReactElement<HTMLDivElement> {
+const Search = () => {
     return (
         <div className="centerblock__search search">
             <div className="search__svg">
