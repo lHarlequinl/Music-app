@@ -1,17 +1,18 @@
 import React from 'react';
-import Search from './search';
-import Filter from '../../../components/UI/filter/filter';
+import * as Styled from './central-block.style';
+import Search from '../../UI/search/search';
+import Filter from '../../UI/filter/filter';
 import Content from './content';
 
 const CenterBlock = () => {
     return (
-	<div className="main__centerblock centerblock">
-		<Search/>
-		<h2 className="centerblock__h2">Треки</h2>
-		<Filter/>
-		<Content/>
-	</div>
-	);
-}
+        <Styled.MainCenterBlock>
+            <Search />
+            <Styled.CenterBlockTitle>Треки</Styled.CenterBlockTitle>
+            <Filter />
+            <Content />
+        </Styled.MainCenterBlock>
+    );
+};
 
 export default CenterBlock;

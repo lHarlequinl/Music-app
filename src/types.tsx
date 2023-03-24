@@ -8,7 +8,7 @@ export interface Track {
     trackName: string;
     authorLink: string;
     authorName: string;
-    isLoading?: true | false;
+    isLoading: boolean;
 }
 
 export interface Svg {
@@ -20,7 +20,7 @@ export interface SidebarItem {
     href: string;
     src: string;
     alt: string;
-    isLoading?: boolean;
+    isLoading: boolean;
 }
 
 export interface UserInfo {
@@ -28,20 +28,14 @@ export interface UserInfo {
 }
 
 export interface PlaylistItemProps {
-    trackTitleLink: string;
-    trackTitleText: string;
-    trackAuthorLink: string;
-    trackAuthorText: string;
-    trackAlbumLink: string;
-    trackAlbumText: string;
-    trackTime: string;
-    isLoading?: boolean;
-}
-export interface ControlButtonsProps {
-    className: string;
-    imageClassName: string;
-    imageHref: string;
-    ariaLabel: string;
+    trackTitleLink: string,
+    trackTitleText: string,
+    trackAuthorLink: string,
+    trackAuthorText: string,
+    trackAlbumLink: string,
+    trackAlbumText: string,
+    trackTime: string,
+    isLoading: boolean
 }
 
 export interface ShowHideMenu {
