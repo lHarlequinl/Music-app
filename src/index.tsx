@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './style/style.scss';
+import * as Styled from './style/style';
+import GlobalStyles from './style/global';
 import Main from './components/main/main';
 
 const root = ReactDOM.createRoot(
@@ -9,11 +10,12 @@ const root = ReactDOM.createRoot(
 
 const Container = () => {
     return (
-        <div className="wrapper">
-            <div className="container">
+        <Styled.Wrapper>
+            <Styled.Container>
                 <Main />
-            </div>
-        </div>
+            </Styled.Container>
+            <GlobalStyles/>
+        </Styled.Wrapper>
     );
 }
 

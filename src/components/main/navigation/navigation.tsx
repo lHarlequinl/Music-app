@@ -1,32 +1,22 @@
 import React, { useState } from 'react';
-import { LogoProps } from '../../../types';
-import BurgerLines from './burger';
-import Menu from './menu';
-
-const Logo = ({ src, alt }: LogoProps) => {
-    return (
-        <div className="nav__logo logo">
-            <img className="logo__image" src={src} alt={alt}></img>
-        </div>
-    );
-};
+import Logo from './logo/logo';
+import BurgerLines from './burger/burger';
+import Menu from './menu/menu';
+import * as Styled from './navigation.style';
 
 const Navigation = () => {
     const [menuActive, setMenuActive] = useState<boolean>(false);
 
     return (
-        <nav className="main__nav nav">
+        <Styled.Nav>
             <Logo src="img/logo.png" alt="logo" />
-            <div
-                className="nav__burger burger"
-                onClick={() => setMenuActive(!menuActive)}
-            >
+            <Styled.NavBurger onClick={() => setMenuActive(!menuActive)}>
                 <BurgerLines menuActive={menuActive} />
                 <BurgerLines menuActive={menuActive} />
                 <BurgerLines menuActive={menuActive} />
-            </div>
+            </Styled.NavBurger>
             <Menu menuActive={menuActive} />
-        </nav>
+        </Styled.Nav>
     );
 };
 export default Navigation;

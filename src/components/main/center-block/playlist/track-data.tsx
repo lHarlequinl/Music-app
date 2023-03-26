@@ -1,14 +1,5 @@
 import { PlaylistItemProps } from '../../../../types';
 
-export const genre: string[] = [
-    'Рок',
-    'Хип-Хоп',
-    'Джаз',
-    'Альтернатива',
-    'Рэп',
-    'Классическая',
-];
-
 export const trackData: PlaylistItemProps[] = [
     {
         trackTitleLink: 'https://',
@@ -18,6 +9,7 @@ export const trackData: PlaylistItemProps[] = [
         trackAlbumLink: 'https://',
         trackAlbumText: 'Welcome Reality',
         trackTime: '4:44',
+        isLoading: true,
     },
     {
         trackTitleLink: 'https://',
@@ -27,6 +19,7 @@ export const trackData: PlaylistItemProps[] = [
         trackAlbumLink: 'https://',
         trackAlbumText: 'Elektro',
         trackTime: '4:44',
+        isLoading: true,
     },
     {
         trackTitleLink: 'https://',
@@ -36,6 +29,7 @@ export const trackData: PlaylistItemProps[] = [
         trackAlbumLink: 'https://',
         trackAlbumText: 'I’m Fire',
         trackTime: '4:44',
+        isLoading: true,
     },
     {
         trackTitleLink: 'https://',
@@ -45,6 +39,7 @@ export const trackData: PlaylistItemProps[] = [
         trackAlbumLink: 'https://',
         trackAlbumText: 'Non Stop now',
         trackTime: '4:44',
+        isLoading: true,
     },
     {
         trackTitleLink: 'https://',
@@ -54,6 +49,7 @@ export const trackData: PlaylistItemProps[] = [
         trackAlbumLink: 'https://',
         trackAlbumText: 'Non Stop',
         trackTime: '4:44',
+        isLoading: true,
     },
     {
         trackTitleLink: 'https://',
@@ -63,6 +59,7 @@ export const trackData: PlaylistItemProps[] = [
         trackAlbumLink: 'https://',
         trackAlbumText: 'Run Run',
         trackTime: '4:44',
+        isLoading: true,
     },
     {
         trackTitleLink: 'https://',
@@ -72,6 +69,7 @@ export const trackData: PlaylistItemProps[] = [
         trackAlbumLink: 'https://',
         trackAlbumText: 'Eyes on Fire',
         trackTime: '4:44',
+        isLoading: true,
     },
     {
         trackTitleLink: 'https://',
@@ -81,6 +79,7 @@ export const trackData: PlaylistItemProps[] = [
         trackAlbumLink: 'https://',
         trackAlbumText: 'Mucho Bien',
         trackTime: '4:44',
+        isLoading: true,
     },
     {
         trackTitleLink: 'https://',
@@ -90,6 +89,7 @@ export const trackData: PlaylistItemProps[] = [
         trackAlbumLink: 'https://',
         trackAlbumText: 'Captivating',
         trackTime: '4:44',
+        isLoading: true,
     },
     {
         trackTitleLink: 'https://',
@@ -99,6 +99,7 @@ export const trackData: PlaylistItemProps[] = [
         trackAlbumLink: 'https://',
         trackAlbumText: 'How Deep Is Your Love',
         trackTime: '4:44',
+        isLoading: true,
     },
     {
         trackTitleLink: 'https://',
@@ -108,14 +109,6 @@ export const trackData: PlaylistItemProps[] = [
         trackAlbumLink: 'https://',
         trackAlbumText: 'Soundz Made in Romania',
         trackTime: '4:44',
-    },
-    {
-        trackTitleLink: 'https://',
-        trackTitleText: '3 september',
-        trackAuthorLink: 'https://',
-        trackAuthorText: 'Shafutinskiy',
-        trackAlbumLink: 'https://',
-        trackAlbumText: '3 september',
-        trackTime: '4:44',
+        isLoading: true,
     },
 ];
