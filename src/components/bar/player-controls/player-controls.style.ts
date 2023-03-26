@@ -16,31 +16,47 @@ export const PrevIconWrapper = styled.div`
     width: 15px;
     height: 14px;
     margin-right: 23px;
+    stroke: #d9d9d9;
     cursor: pointer;
+
+    :hover {
+        stroke: #696969;
+    }
+
+    :active {
+        stroke: #D9D9D9;
+    }
 `;
 
 export const PlayIconWrapper = styled.div`
     width: 22px;
     height: 20px;
     margin-right: 23px;
-    fill: #d9d9d9;
+    stroke: #d9d9d9;
     cursor: pointer;
 
     :hover {
-        stroke: #cccccc;
+        stroke: #696969;
+    }
+
+    :active {
+        stroke: #D9D9D9;
     }
 `;
 
 export const NextIconWrapper = styled.div`
     width: 15px;
     height: 14px;
-    stroke: #d9d9d9;
     margin-right: 28px;
-    fill: #a53939;
+    stroke: #d9d9d9;
     cursor: pointer;
 
     :hover {
-        stroke: #cccccc;
+        stroke: #696969;
+    }
+
+    :active {
+        stroke: #D9D9D9;
     }
 `;
 

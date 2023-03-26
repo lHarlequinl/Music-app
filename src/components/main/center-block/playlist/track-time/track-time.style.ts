@@ -17,6 +17,15 @@ export const TrackTimeSVGWRapper = styled.div`
     margin-right: 17px;
     fill: transparent;
     stroke: #696969;
+    cursor: pointer;
+
+    :hover {
+        stroke: #cccccc;
+    }
+
+    :active {
+        fill: #696969;
+    }
 `;
 
 export const TrackTimeText = styled.span`
