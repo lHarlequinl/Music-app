@@ -1,14 +1,15 @@
 import React from 'react';
-import PlaylistTitle from './playlist/playlist-title';
-import PlaylistItems from './playlist/playlist-items';
+import * as Styled from './central-block.style';
+import PlaylistTitle from './playlist/playlist-title/playlist-title';
+import PlaylistItems from './playlist/playlist-items/playlist-items';
 
 const Content = () => {
-	return (
-        <div className="centerblock__content">
+    return (
+        <Styled.CenterBlockContent>
             <PlaylistTitle />
             <PlaylistItems />
-        </div>
-	)
-}
+        </Styled.CenterBlockContent>
+    );
+};
 
-export default Content
+export default Content;
