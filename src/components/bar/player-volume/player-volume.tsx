@@ -9,7 +9,7 @@ const PlayerVolume = () => {
                 <S.PlayerVolumeImageWrapper>
                     <S.PlayerVolumeSVGWrapper>
                         <SvgImage
-                            href="img/icon/sprite.svg#icon-volume"
+                            href="/img/icon/sprite.svg#icon-volume"
                             ariaLabel="volume"
                         />
                     </S.PlayerVolumeSVGWrapper>

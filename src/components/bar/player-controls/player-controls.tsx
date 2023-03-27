@@ -8,7 +8,7 @@ const PlayerControls = () => {
             <Styled.PlayerButton>
                 <Styled.PrevIconWrapper>
                     <SvgImage
-                        href="img/icon/sprite.svg#icon-prev"
+                        href="/img/icon/sprite.svg#icon-prev"
                         ariaLabel="prev"
                     />
                 </Styled.PrevIconWrapper>
@@ -16,7 +16,7 @@ const PlayerControls = () => {
             <Styled.PlayerButton>
                 <Styled.PlayIconWrapper>
                     <SvgImage
-                        href="img/icon/sprite.svg#icon-play"
+                        href="/img/icon/sprite.svg#icon-play"
                         ariaLabel="play"
                     />
                 </Styled.PlayIconWrapper>
@@ -24,7 +24,7 @@ const PlayerControls = () => {
             <Styled.PlayerButton>
                 <Styled.NextIconWrapper>
                     <SvgImage
-                        href="img/icon/sprite.svg#icon-next"
+                        href="/img/icon/sprite.svg#icon-next"
                         ariaLabel="next"
                     />
                 </Styled.NextIconWrapper>
@@ -32,7 +32,7 @@ const PlayerControls = () => {
             <Styled.PlayerButton>
                 <Styled.RepeatIconWrapper>
                     <SvgImage
-                        href="img/icon/sprite.svg#icon-repeat"
+                        href="/img/icon/sprite.svg#icon-repeat"
                         ariaLabel="repeat"
                     />
                 </Styled.RepeatIconWrapper>
@@ -40,7 +40,7 @@ const PlayerControls = () => {
             <Styled.PlayerButton>
                 <Styled.ShuffleIconWrapper>
                     <SvgImage
-                        href="img/icon/sprite.svg#icon-shuffle"
+                        href="/img/icon/sprite.svg#icon-shuffle"
                         ariaLabel="shuffle"
                     />
                 </Styled.ShuffleIconWrapper>

@@ -11,7 +11,7 @@ const PlaylistTitle = () => {
             <Styled.PlaylistTitleCol04>
                 <Styled.PlaylistSVGWrapper>
                     <SvgImage
-                        href="img/icon/sprite.svg#icon-watch"
+                        href="/img/icon/sprite.svg#icon-watch"
                         ariaLabel="time"
                     />
                 </Styled.PlaylistSVGWrapper>

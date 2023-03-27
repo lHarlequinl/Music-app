@@ -18,19 +18,19 @@ const SidebarList = () => {
         <Styled.SidebarList>
             <SidebarListItem
                 href="#"
-                src="img/playlist01.png"
+                src="/img/playlist01.png"
                 alt="day's playlist"
                 isLoading={status}
             />
             <SidebarListItem
                 href="#"
-                src="img/playlist02.png"
+                src="/img/playlist02.png"
                 alt="100th hits"
                 isLoading={status}
             />
             <SidebarListItem
                 href="#"
-                src="img/playlist03.png"
+                src="/img/playlist03.png"
                 alt="Indi charge"
                 isLoading={status}
             />
