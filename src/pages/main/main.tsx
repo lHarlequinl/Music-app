@@ -1,9 +1,9 @@
 import React from 'react';
 import * as Styled from './main.style';
-import Navigation from './navigation/navigation';
-import CentrBlock from './center-block/center-block';
-import Bar from '../bar/bar';
-import Sidebar from './sidebar/sidebar';
+import Navigation from '../../components/main/navigation/navigation';
+import CentrBlock from '../../components/main/center-block/center-block';
+import Bar from '../../components/bar/bar';
+import Sidebar from '../../components/main/sidebar/sidebar';
 
 const Main = () => {
     return (

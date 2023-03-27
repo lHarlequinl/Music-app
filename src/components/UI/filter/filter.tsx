@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import FilterItemYears from './filter-years/filter-item-years';
 import FilterItem from './filter-item/filter-item';
-import { trackData } from '../../main/center-block/playlist/track-data';
+import { trackData } from '../../../mocks/track-data';
 import FilterCategories from './filter-categories/filter-categories';
 import * as Styled from './filter.style';
 
@@ -44,7 +44,7 @@ const Filter = () => {
                 />
                 <Styled.FilterItemsWrapperAuthor isActive={isActive}>
                     <Styled.FilterItems>
-                        {trackData.map((item) => (
+                        {trackData[0].tracks.map((item) => (
                             <FilterItem
                                 key={item.trackTitleText}
                                 text={item.trackAuthorText}
@@ -70,7 +70,7 @@ const Filter = () => {
                     <FilterItemYears />
                 </Styled.FilterItemsWrapperYear>
             </Styled.FilterButtonWrapper>
-            
+
             <Styled.FilterButtonWrapper
                 onClick={() =>
                     setActive((prevState) =>
