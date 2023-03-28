@@ -17,7 +17,6 @@ export interface Svg {
 }
 
 export interface SidebarItem {
-    href: string;
     src: string;
     alt: string;
     isLoading: boolean;
@@ -49,7 +48,6 @@ export interface ShowHideMenu {
 }
 
 export interface MenuPropsLink {
-    href: string;
     text: string;
 }
 

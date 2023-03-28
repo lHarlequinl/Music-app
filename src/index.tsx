@@ -10,13 +10,13 @@ const root = ReactDOM.createRoot(
 );
 
 const Container = () => {
-    const isLogin = Boolean(localStorage.getItem('token'));
+    // const isLogin = Boolean(localStorage.getItem('token'));
 
     return (
         <BrowserRouter>
             <Styled.Wrapper>
                 <Styled.Container>
-                    <AppRoutes isLogin={isLogin} />
+                    <AppRoutes isLogin={true} /> // заглушка для входа
                 </Styled.Container>
                 <GlobalStyles />
             </Styled.Wrapper>

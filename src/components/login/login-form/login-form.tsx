@@ -11,13 +11,9 @@ const LoginForm = () => {
     return (
         <Styled.LoginForm>
             <Styled.Logo src="/img/logo-black.png" alt="logo" />
-            <Styled.LoginInput placeholder="Логин" />
-            <Styled.LoginInput placeholder="Пароль" />
-            <Link to="/main">
-                <Styled.LoginButton>
-                    Войти
-                </Styled.LoginButton>
-            </Link>
+            <Styled.LoginInput placeholder="Логин" type='text'/>
+            <Styled.LoginInput placeholder="Пароль" type='password'/>
+            <Styled.LoginButton onClick={(e) => MyLogin(e)}>Войти</Styled.LoginButton>
             <Link to="/registration">
                 <Styled.RegistrationButton>
                     Зарегистрироваться

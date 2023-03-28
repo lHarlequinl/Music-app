@@ -12,7 +12,7 @@ export const LoginForm = styled.form`
 `;
 
 export const Logo = styled.img`
-    margin-bottom: 42px;
+    margin-bottom: 50px;
 `;
 
 export const LoginInput = styled.input`
@@ -26,11 +26,7 @@ export const LoginInput = styled.input`
     border-bottom: 1px solid #d0cece;
 
     :not(:last-child) {
-        margin-bottom: 38px;
-    }
-
-    :last-child {
-        margin-bottom: 60px;
+        margin-bottom: 42px;
     }
 
     ::placeholder {
@@ -59,6 +55,7 @@ export const LoginButton = styled.button`
     border-radius: 6px;
     border: 0;
     cursor: pointer;
+    margin-top: 22px;
 
     :not(:last-child) {
         margin-bottom: 20px;
@@ -78,6 +75,7 @@ export const RegistrationButton = styled(LoginButton)`
     background-color: #ffffff;
     border: 1px #d0cece solid;
     font-weight: 500;
+    margin-top: 0;
 
     :hover {
         background: #f4f5f6;

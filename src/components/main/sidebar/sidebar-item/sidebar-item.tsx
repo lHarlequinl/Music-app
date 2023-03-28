@@ -3,17 +3,19 @@ import { SidebarItem } from '../../../../types';
 import * as Styled from './sidebar-item.style';
 import * as Skeleton from '../../../UI/skeletons/skeletons.style';
 
-const SidebarListItem = ({ href, src, alt, isLoading }: SidebarItem) => {
+const SidebarListItem = ({ src, alt, isLoading }: SidebarItem) => {
+    let sidebarItem;
+    
+    if (isLoading) {
+        sidebarItem = <Skeleton.Skeleton />;
+    } else {
+        sidebarItem = <Styled.SidebarImg src={src} alt={alt} />;
+    }
+
     return (
-        <Styled.SidebarItem>
-            <Styled.SidebarLink href={href}>
-                {isLoading ? (
-                    <Skeleton.Skeleton />
-                ) : (
-                    <Styled.SidebarImg src={src} alt={alt} />
-                )}
-            </Styled.SidebarLink>
-        </Styled.SidebarItem>
+        <div>
+            <Styled.SidebarItem>{sidebarItem}</Styled.SidebarItem>
+        </div>
     );
 };
 

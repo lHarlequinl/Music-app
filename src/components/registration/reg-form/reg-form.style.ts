@@ -29,10 +29,6 @@ export const RegistrationInput = styled.input`
         margin-bottom: 38px;
     }
 
-    :last-child {
-        margin-bottom: 60px;
-    }
-
     ::placeholder {
         color: #e1e1e1;
     }
@@ -58,6 +54,7 @@ export const RegistrationButton = styled.button`
     border-radius: 6px;
     border: 0;
     cursor: pointer;
+    margin-top: 22px;
 
     :hover {
         background: #3F007D;

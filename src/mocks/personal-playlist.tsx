@@ -2,7 +2,7 @@ import { PlaylistProps } from '../types';
 
 export const PersonalPlaylistItems: PlaylistProps[] = [
     {
-        id: 2,
+        id: 22,
         title: 'Треки',
         tracks: [
             {

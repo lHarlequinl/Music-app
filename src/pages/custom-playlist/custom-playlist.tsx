@@ -12,7 +12,7 @@ import Bar from '../../components/bar/bar';
 import Sidebar from '../../components/main/sidebar/sidebar';
 import { useParams } from 'react-router-dom';
 
-const PersonalPlaylist = () => {
+const CustomPlaylist = () => {
     const params = useParams();
     const currenPlaylist = CustomPlaylists.filter(
         (item) => item.id === params.id
@@ -24,7 +24,7 @@ const PersonalPlaylist = () => {
             <CenterBlock>
                 <Search />
                 <CenterBlockTitle>{currenPlaylist[0].title}</CenterBlockTitle>
-                <Content playlist={CustomPlaylists} />
+                <Content playlist={currenPlaylist} />
             </CenterBlock>
             <Sidebar />
             <Bar />
@@ -32,4 +32,4 @@ const PersonalPlaylist = () => {
     );
 };
 
-export default PersonalPlaylist;
+export default CustomPlaylist;
