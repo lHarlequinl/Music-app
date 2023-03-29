@@ -20,7 +20,7 @@ const PlayerTrack = ({
                     ) : (
                         <Styled.TrackPlaySVGWrapper>
                             <SvgImage
-                                href="img/icon/sprite.svg#icon-note"
+                                href="/img/icon/sprite.svg#icon-note"
                                 ariaLabel="music"
                             />
                         </Styled.TrackPlaySVGWrapper>
@@ -49,7 +49,7 @@ const PlayerTrack = ({
                 <Styled.TrackPlayLikeButton>
                     <Styled.TrackPlayLikeDisButtonSVGWrapper>
                         <SvgImage
-                            href="img/icon/sprite.svg#icon-like"
+                            href="/img/icon/sprite.svg#icon-like"
                             ariaLabel="like"
                         />
                     </Styled.TrackPlayLikeDisButtonSVGWrapper>
@@ -57,7 +57,7 @@ const PlayerTrack = ({
                 <Styled.TrackPlayDisButton>
                     <Styled.TrackPlayLikeDisButtonSVGWrapper>
                         <SvgImage
-                            href="img/icon/sprite.svg#icon-dislike"
+                            href="/img/icon/sprite.svg#icon-dislike"
                             ariaLabel="dislike"
                         />
                     </Styled.TrackPlayLikeDisButtonSVGWrapper>

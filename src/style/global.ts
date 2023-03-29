@@ -22,6 +22,7 @@ export default createGlobalStyle`
     height: 100%;
     font-family: 'StratosSkyeng', sans-serif;
     color: #FFFFFF;
+    background-color: rgb(24, 24, 24)
   }
   ul li {
     list-style: none;

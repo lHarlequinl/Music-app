@@ -1,6 +1,5 @@
 import React from 'react';
 import * as Styled from './playlist-item.style';
-import SvgImage from '../../../../svg/svg-image';
 import { PlaylistItemProps } from '../../../../../types';
 import TrackTitle from './../track-title/track-title';
 import TrackAuthor from './../track-author/track-author';

@@ -17,7 +17,7 @@ const TrackAlbum = ({ isLoading, trackTime }: PropsType) => {
                 <Styled.TrackTimeWrapper>
                     <Styled.TrackTimeSVGWRapper>
                         <SvgImage
-                            href="img/icon/sprite.svg#icon-like"
+                            href="/img/icon/sprite.svg#icon-like"
                             ariaLabel={'time'}
                         />
                     </Styled.TrackTimeSVGWRapper>

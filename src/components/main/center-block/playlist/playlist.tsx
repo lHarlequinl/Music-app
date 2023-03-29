@@ -1,21 +1,29 @@
 import React, { useEffect, useState } from 'react';
-import * as Styled from './playlist-items.style';
-import PlaylistItem from '../playlist-item/playlist-item';
-import { trackData } from '../track-data';
+import * as Styled from './playlist.style';
+import PlaylistItem from './playlist-item/playlist-item';
+import { PlaylistProps, PlaylistItemProps } from '../../../../types';
 
-const PlaylistItems = () => {
-    const [status, setStatus] = useState<boolean>(true);
+interface Props {
+    playlist: PlaylistProps[];
+}
+
+const PlaylistContent = ({ playlist }: Props) => {
+    const currentPlaylist: PlaylistProps = playlist[0];
+
+    const [isLoading, setLoading] = useState<boolean>(true);
+
     useEffect(() => {
         const loadTimer = setTimeout(() => {
-            setStatus(false);
+            setLoading(false);
         }, 5000);
         return () => {
             clearTimeout(loadTimer);
         };
     });
+
     return (
         <Styled.PlaylistContent>
-            {trackData.map((track) => (
+            {currentPlaylist.tracks.map((track: PlaylistItemProps) => (
                 <PlaylistItem
                     key={track.trackTitleText}
                     trackTitleLink={track.trackTitleLink}
@@ -25,11 +33,11 @@ const PlaylistItems = () => {
                     trackAlbumLink={track.trackAlbumLink}
                     trackAlbumText={track.trackAlbumText}
                     trackTime={track.trackTime}
-                    isLoading={status}
+                    isLoading={isLoading}
                 />
             ))}
         </Styled.PlaylistContent>
     );
 };
 
-export default PlaylistItems;
+export default PlaylistContent;

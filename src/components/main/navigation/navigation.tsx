@@ -9,7 +9,7 @@ const Navigation = () => {
 
     return (
         <Styled.Nav>
-            <Logo src="img/logo.png" alt="logo" />
+            <Logo src="/img/logo.png" alt="logo" />
             <Styled.NavBurger onClick={() => setMenuActive(!menuActive)}>
                 <BurgerLines menuActive={menuActive} />
                 <BurgerLines menuActive={menuActive} />

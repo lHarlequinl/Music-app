@@ -6,9 +6,6 @@ export const SidebarItem = styled.div`
     height: 150px;
     background-color: #313131;
     overflow: hidden;
-
-    &:not(:last-child) {
-    margin-bottom: 30px;
 `;
 
 export const SidebarLink = styled.a`
