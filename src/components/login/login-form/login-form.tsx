@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 const LoginForm = () => {
     const MyLogin = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
-        localStorage.setItem('token', '');
+        localStorage.setItem('token', 'Eto ya, Maksim');
+        window.location.reload(); //временно для входа
     };
 
     return (
