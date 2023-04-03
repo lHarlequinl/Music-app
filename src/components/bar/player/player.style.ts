@@ -25,6 +25,7 @@ export const BarPlayerProgress = styled.input<{ gradientValue: string }>`
             ${(props) =>
                 props.gradientValue !== '' ? props.gradientValue : '0'}%
     );
+    transition: 1s;
     cursor: pointer;
     ::-webkit-slider-thumb {
         -webkit-appearance: none;

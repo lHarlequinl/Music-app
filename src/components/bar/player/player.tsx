@@ -30,11 +30,6 @@ const Player = () => {
         setIsPlaying(!isPlaying);
     };
 
-    const onVolumeChange = (e: React.ChangeEvent) => {
-        audioRef.current.volume = Number((e.target as HTMLInputElement).value);
-        setIsVolumeOn(true);
-    };
-
     const onVolumeToggle = () => {
         setIsVolumeOn(!isVolumeOn);
         isVolumeOn
@@ -93,7 +88,6 @@ const Player = () => {
                 </Styled.BarPlayer>
                 <PlayerVolume
                     value={audioRef.current.volume}
-                    onVolumeChange={onVolumeChange}
                     onVolumeToggle={() => onVolumeToggle()}
                     onVolumeOn={isVolumeOn}
                 />
