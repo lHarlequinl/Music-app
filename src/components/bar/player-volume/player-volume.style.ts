@@ -15,7 +15,7 @@ export const PlayerVolumeContent = styled.div`
 `;
 
 export const PlayerVolumeImageWrapper = styled.div`
-    width: 13px;
+    width: 19px;
     height: 18px;
     margin-right: 17px;
 `;

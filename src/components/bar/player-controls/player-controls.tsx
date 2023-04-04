@@ -2,7 +2,12 @@ import React from 'react';
 import * as Styled from './player-controls.style';
 import SvgImage from '../../svg/svg-image';
 
-const PlayerControls = () => {
+interface Props {
+    isPlaying: boolean;
+    onTogglePlay: () => void;
+}
+
+const PlayerControls = ({ isPlaying, onTogglePlay }: Props) => {
     return (
         <Styled.PlayerControls>
             <Styled.PlayerButton>
@@ -13,13 +18,22 @@ const PlayerControls = () => {
                     />
                 </Styled.PrevIconWrapper>
             </Styled.PlayerButton>
-            <Styled.PlayerButton>
-                <Styled.PlayIconWrapper>
-                    <SvgImage
-                        href="/img/icon/sprite.svg#icon-play"
-                        ariaLabel="play"
-                    />
-                </Styled.PlayIconWrapper>
+            <Styled.PlayerButton onClick={() => onTogglePlay()}>
+                {isPlaying ? (
+                    <Styled.PlayIconWrapper>
+                        <SvgImage
+                            href="/img/icon/sprite.svg#icon-pause"
+                            ariaLabel="pause"
+                        />
+                    </Styled.PlayIconWrapper>
+                ) : (
+                    <Styled.PlayIconWrapper>
+                        <SvgImage
+                            href="/img/icon/sprite.svg#icon-play"
+                            ariaLabel="play"
+                        />
+                    </Styled.PlayIconWrapper>
+                )}
             </Styled.PlayerButton>
             <Styled.PlayerButton>
                 <Styled.NextIconWrapper>

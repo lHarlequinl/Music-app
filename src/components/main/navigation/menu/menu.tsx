@@ -19,6 +19,7 @@ const Menu = ({ menuActive }: ShowHideMenu) => {
                 <NavLink to="/login">
                     <MenuList text="Выйти" />
                 </NavLink>
+                <Styled.MenuThemeInterface src="../../../img/theme-darck.png" />
             </Styled.MenuList>
         </Styled.Menu>
     );

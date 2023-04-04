@@ -45,6 +45,7 @@ export const TrackPlayAuthorLink = styled.a`
     line-height: 24px;
     color: #ffffff;
     white-space: nowrap;
+    text-decoration: underline;
 `;
 
 export const TrackPlayAlbum = styled.div`

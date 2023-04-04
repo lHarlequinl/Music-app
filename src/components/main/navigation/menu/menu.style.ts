@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export const Menu = styled.div<{ active: boolean }>`
     display: block;
     visibility: visible;
-    transform: ${props => props.active ? 'translateX(0)' : 'translate(-200%)'};
+    transform: ${(props) =>
+        props.active ? 'translateX(0)' : 'translate(-200%)'};
     transition: transform 0.5s;
 `;
 
@@ -30,3 +31,7 @@ export const MenuLink = styled.a`
     }
 `;
 
+export const MenuThemeInterface = styled.img`
+    cursor: pointer;
+    width: 39px;
+`;
