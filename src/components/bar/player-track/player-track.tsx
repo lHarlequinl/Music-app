@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import SvgImage from '../../svg/svg-image';
 import * as Styled from './player-track.style';
 import { Track } from '../../../types';
 import { SkeletonImage, Skeleton } from '../../UI/skeletons/skeletons.style';
+import { ThemeContext } from '../../contexts/theme-context/theme-context';
 
 const PlayerTrack = ({
     trackLink,
@@ -11,6 +12,8 @@ const PlayerTrack = ({
     authorName,
     isLoading = true,
 }: Track) => {
+    const { isDarkTheme } = useContext(ThemeContext);
+
     return (
         <Styled.TrackPlay>
             <Styled.TrackPlayContain>
@@ -30,7 +33,7 @@ const PlayerTrack = ({
                     {isLoading === true ? (
                         <Skeleton />
                     ) : (
-                        <Styled.TrackPlayAuthorLink href={trackLink}>
+                        <Styled.TrackPlayAuthorLink isDarkTheme={isDarkTheme} href={trackLink}>
                             {trackName}
                         </Styled.TrackPlayAuthorLink>
                     )}
@@ -39,7 +42,7 @@ const PlayerTrack = ({
                     {isLoading === true ? (
                         <Skeleton />
                     ) : (
-                        <Styled.TrackPlayAlbumLink href={authorLink}>
+                        <Styled.TrackPlayAlbumLink isDarkTheme={isDarkTheme} href={authorLink}>
                             {authorName}
                         </Styled.TrackPlayAlbumLink>
                     )}

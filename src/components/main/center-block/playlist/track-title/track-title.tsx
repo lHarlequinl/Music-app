@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import * as Styled from './track-title.style';
 import {
     SkeletonImage,
     Skeleton,
 } from '../../../../UI/skeletons/skeletons.style';
 import SvgImage from '../../../../../components/svg/svg-image';
+import { ThemeContext } from '../../../../contexts/theme-context/theme-context';
 
 interface PropsType {
     isLoading: boolean;
@@ -17,6 +18,8 @@ const TrackTitle = ({
     trackTitleLink,
     trackTitleText,
 }: PropsType) => {
+    const { isDarkTheme } = useContext(ThemeContext);
+
     return (
         <Styled.TrackTitle>
             <Styled.TrackImageWrapper>
@@ -37,7 +40,7 @@ const TrackTitle = ({
                 {isLoading === true ? (
                     <Skeleton />
                 ) : (
-                    <Styled.TrackTitleLink href={trackTitleLink}>
+                    <Styled.TrackTitleLink isDarkTheme={isDarkTheme} href={trackTitleLink}>
                         {trackTitleText}
                         <Styled.TrackTitleSpan></Styled.TrackTitleSpan>
                     </Styled.TrackTitleLink>

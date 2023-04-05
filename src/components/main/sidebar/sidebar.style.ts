@@ -1,8 +1,17 @@
 import styled from 'styled-components';
 
-export const Sidebar = styled.div`
+const COLORS = {
+    'dark-background': '#181818',
+    'light-background': '#FFFFFF',
+};
+
+export const Sidebar = styled.div<{ isDarkTheme: boolean }>`
     max-width: 418px;
     padding: 20px 90px 20px 78px;
+    background-color: ${(props) =>
+        props.isDarkTheme
+            ? COLORS['dark-background']
+            : COLORS['light-background']};
 `;
 
 export const SidebarBlock = styled.div`

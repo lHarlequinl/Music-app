@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+const COLORS = {
+    'dark-author': '#FFFFFF',
+    'light-author': '#000000',
+};
+
 export const TrackPlay = styled.div`
     display: flex;
     flex-direction: row;
@@ -38,12 +43,13 @@ export const TrackPlayAuthor = styled.div`
     overflow: hidden;
 `;
 
-export const TrackPlayAuthorLink = styled.a`
+export const TrackPlayAuthorLink = styled.a<{ isDarkTheme: boolean }>`
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    color: #ffffff;
+    color: ${(props) =>
+        props.isDarkTheme ? COLORS['dark-author'] : COLORS['light-author']};
     white-space: nowrap;
     text-decoration: underline;
 `;
@@ -55,12 +61,13 @@ export const TrackPlayAlbum = styled.div`
     overflow: hidden;
 `;
 
-export const TrackPlayAlbumLink = styled.a`
+export const TrackPlayAlbumLink = styled.a<{ isDarkTheme: boolean }>`
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
     line-height: 24px;
-    color: #ffffff;
+    color: ${(props) =>
+        props.isDarkTheme ? COLORS['dark-author'] : COLORS['light-author']};
 `;
 
 export const TrackPlayLikeDisWrapper = styled.div`

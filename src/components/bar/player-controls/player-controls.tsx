@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import * as Styled from './player-controls.style';
 import SvgImage from '../../svg/svg-image';
+import { ThemeContext } from '../../contexts/theme-context/theme-context';
 
 interface Props {
     isPlaying: boolean;
@@ -8,6 +9,8 @@ interface Props {
 }
 
 const PlayerControls = ({ isPlaying, onTogglePlay }: Props) => {
+    const { isDarkTheme } = useContext(ThemeContext);
+
     return (
         <Styled.PlayerControls>
             <Styled.PlayerButton>

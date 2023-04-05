@@ -24,7 +24,7 @@ export const PrevIconWrapper = styled.div`
     }
 
     :active {
-        stroke: #D9D9D9;
+        stroke: #d9d9d9;
     }
 `;
 
@@ -40,7 +40,7 @@ export const PlayIconWrapper = styled.div`
     }
 
     :active {
-        stroke: #D9D9D9;
+        stroke: #d9d9d9;
     }
 `;
 
@@ -56,7 +56,7 @@ export const NextIconWrapper = styled.div`
     }
 
     :active {
-        stroke: #D9D9D9;
+        stroke: #d9d9d9;
     }
 `;
 
@@ -73,7 +73,7 @@ export const RepeatIconWrapper = styled.div`
     }
 
     :active {
-        stroke: #FFFFFF;
+        stroke: #ffffff;
     }
 `;
 
@@ -90,6 +90,6 @@ export const ShuffleIconWrapper = styled.div`
     }
 
     :active {
-        stroke: #FFFFFF;
+        stroke: #ffffff;
     }
 `;

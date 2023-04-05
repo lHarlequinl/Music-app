@@ -1,25 +1,34 @@
 import styled from 'styled-components';
 
-export const FilterButton = styled.div<{ isActive: boolean }>`
+const COLORS = {
+    'dark-border': '#FFFFFF',
+    'light-border': '#000000',
+};
+
+export const FilterButton = styled.div<{
+    isActive: boolean;
+    isDarkTheme: boolean;
+}>`
     position: relative;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
     border: ${(props) =>
-        props.isActive ? '1px solid #9A48F1' : '1px solid #ffffff'};
+        (props.isActive ? '1px solid #9A48F1' : '1px solid #FFFFFF') &&
+        (props.isDarkTheme ? '1px solid #FFFFFF' : '1px solid #000000')};
     border-radius: 60px;
     padding: 6px 20px;
     color: ${(props) => (props.isActive ? '#B672FF' : '')};
 
     :hover {
-        border-color: #d9b6ff;
-        color: #d9b6ff;
+        border-color: ${(props) => (props.isDarkTheme ? '#d9b6ff' : '#580EA2')};
+        color: ${(props) => (props.isDarkTheme ? '#d9b6ff' : '#580EA2')};
         cursor: pointer;
     }
     :active {
-        border-color: #ad61ff;
-        color: #ad61ff;
+        border-color: ${(props) => (props.isDarkTheme ? '#ad61ff' : '#AD61FF')};
+        color: ${(props) => (props.isDarkTheme ? '#ad61ff' : '#AD61FF')};
         cursor: pointer;
     }
 `;

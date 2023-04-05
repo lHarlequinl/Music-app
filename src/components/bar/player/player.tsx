@@ -1,11 +1,13 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import * as Styled from './player.style';
 import PlayerControls from '../player-controls/player-controls';
 import PlayerTrack from '../player-track/player-track';
 import PlayerVolume from '../player-volume/player-volume';
+import { ThemeContext } from '../../contexts/theme-context/theme-context';
 
 const Player = () => {
     const [isLoading, setStatus] = useState<boolean>(true);
+    const { isDarkTheme } = useContext(ThemeContext);
 
     useEffect(() => {
         const loadTimer = setTimeout(() => {
@@ -63,6 +65,7 @@ const Player = () => {
     return (
         <Styled.BarPlayerContent>
             <Styled.BarPlayerProgress
+                isDarkTheme={isDarkTheme}
                 type="range"
                 step="1"
                 min="0"
@@ -72,7 +75,7 @@ const Player = () => {
                     isNaN(progressByPercent) ? '0' : `${progressByPercent}`
                 }
             ></Styled.BarPlayerProgress>
-            <Styled.BarPlayerBlock>
+            <Styled.BarPlayerBlock isDarkTheme={isDarkTheme}>
                 <Styled.BarPlayer>
                     <PlayerControls
                         isPlaying={isPlaying}

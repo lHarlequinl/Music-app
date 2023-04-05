@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+const COLORS = {
+    'dark-link': '#FFFFFF',
+    'light-link': '#000000',
+};
+
 export const TrackTitle = styled.div`
     position: relative;
     display: flex;
@@ -40,12 +45,13 @@ export const TrackTitleText = styled.div`
     overflow: hidden;
 `;
 
-export const TrackTitleLink = styled.a`
+export const TrackTitleLink = styled.a<{ isDarkTheme: boolean }>`
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    color: #ffffff;
+    color: ${(props) =>
+        props.isDarkTheme ? COLORS['dark-link'] : COLORS['light-link']};
 `;
 
 export const TrackTitleSpan = styled.span`
