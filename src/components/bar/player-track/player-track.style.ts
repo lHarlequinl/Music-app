@@ -1,10 +1,5 @@
 import styled from 'styled-components';
 
-const COLORS = {
-    'dark-author': '#FFFFFF',
-    'light-author': '#000000',
-};
-
 export const TrackPlay = styled.div`
     display: flex;
     flex-direction: row;
@@ -18,7 +13,9 @@ export const TrackPlayContain = styled.div`
     align-items: center;
 `;
 
-export const TrackImageWrapper = styled.div`
+export const TrackImageWrapper = styled.div<{ isDarkTheme: boolean }>`
+    --bg-color: ${props => props.isDarkTheme ? '#313131' : '#F6F4F4'};
+
     width: 51px;
     height: 51px;
     background-color: #313131;
@@ -27,13 +24,16 @@ export const TrackImageWrapper = styled.div`
     justify-content: center;
     margin-right: 12px;
     grid-area: image;
+    background-color: var(--bg-color);
 `;
 
-export const TrackPlaySVGWrapper = styled.div`
+export const TrackPlaySVGWrapper = styled.div<{ isDarkTheme: boolean }>`
+    --color: ${(props) => (props.isDarkTheme ? '#4E4E4E' : '#B1B1B1')};
+
     width: 18px;
     height: 17px;
     fill: transparent;
-    stroke: #4e4e4e;
+    color: var(--color);
 `;
 
 export const TrackPlayAuthor = styled.div`
@@ -44,12 +44,13 @@ export const TrackPlayAuthor = styled.div`
 `;
 
 export const TrackPlayAuthorLink = styled.a<{ isDarkTheme: boolean }>`
+    color: ${(props) =>
+    props.isDarkTheme ? '#FFFFFF' : '#000000'};
+
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    color: ${(props) =>
-        props.isDarkTheme ? COLORS['dark-author'] : COLORS['light-author']};
     white-space: nowrap;
     text-decoration: underline;
 `;
@@ -62,12 +63,13 @@ export const TrackPlayAlbum = styled.div`
 `;
 
 export const TrackPlayAlbumLink = styled.a<{ isDarkTheme: boolean }>`
+    color: ${(props) =>
+    props.isDarkTheme ? '#FFFFFF' : '#000000'};
+
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
     line-height: 24px;
-    color: ${(props) =>
-        props.isDarkTheme ? COLORS['dark-author'] : COLORS['light-author']};
 `;
 
 export const TrackPlayLikeDisWrapper = styled.div`
@@ -84,21 +86,26 @@ export const TrackPlayLikeButton = styled.div`
     cursor: pointer;
 `;
 
-export const TrackPlayLikeDisButtonSVGWrapper = styled.div`
+export const TrackPlayLikeDisButtonSVGWrapper = styled.div<{
+    isDarkTheme: boolean;
+}>`
+    --color: ${(props) => (props.isDarkTheme ? '#696969' : '#B1B1B1')};
+    --color-hover: ${(props) => (props.isDarkTheme ? '#ACACAC' : '#707070')};
+    --color-active: ${(props) => (props.isDarkTheme ? '#FFFFFF' : 'transparent')};
+    --color-active-fill: ${(props) => (props.isDarkTheme ? '#696969' : '#AD61FF')};
+
     width: 14px;
     height: 12px;
-    fill: transparent;
-    stroke: #696969;
+    cursor: pointer;
+    color: var(--color);
 
     :active {
-        fill: #696969;
-        stroke: #ffffff;
-        cursor: pointer;
+        fill: var(--color-active-fill);
+        color: var(--color);
     }
 
     :hover {
-        stroke: #acacac;
-        cursor: pointer;
+        color: var(--color-hover);
     }
 `;
 

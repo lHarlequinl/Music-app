@@ -36,9 +36,12 @@ export const PlaylistTitleCol04 = styled(PlaylistTitleCol)`
     justify-content: flex-end;
 `;
 
-export const PlaylistSVGWrapper = styled.div`
+export const PlaylistSVGWrapper = styled.div<{
+    isDarkTheme: boolean;
+}>`
+    --color: ${(props) => (props.isDarkTheme ? '#696969' : '#B1B1B1')};
+
     width: 12px;
     height: 17px;
-    fill: transparent;
-    stroke: #696969;
+    color: var(--color);
 `;

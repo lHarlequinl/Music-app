@@ -1,14 +1,11 @@
 import styled from 'styled-components';
 
-const COLORS = {
-    'dark-border': '#FFFFFF',
-    'light-border': '#000000',
-};
-
 export const FilterButton = styled.div<{
     isActive: boolean;
     isDarkTheme: boolean;
 }>`
+    color: ${(props) => (props.isActive ? '#B672FF' : '')};
+
     position: relative;
     font-style: normal;
     font-weight: 400;
@@ -19,13 +16,13 @@ export const FilterButton = styled.div<{
         (props.isDarkTheme ? '1px solid #FFFFFF' : '1px solid #000000')};
     border-radius: 60px;
     padding: 6px 20px;
-    color: ${(props) => (props.isActive ? '#B672FF' : '')};
 
     :hover {
         border-color: ${(props) => (props.isDarkTheme ? '#d9b6ff' : '#580EA2')};
         color: ${(props) => (props.isDarkTheme ? '#d9b6ff' : '#580EA2')};
         cursor: pointer;
     }
+    
     :active {
         border-color: ${(props) => (props.isDarkTheme ? '#ad61ff' : '#AD61FF')};
         color: ${(props) => (props.isDarkTheme ? '#ad61ff' : '#AD61FF')};

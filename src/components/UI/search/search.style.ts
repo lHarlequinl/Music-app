@@ -20,14 +20,21 @@ export const SearchBlock = styled.div<{ isDarkTheme: boolean }>`
     align-items: center;
 `;
 
-export const SearchSVGWrapper = styled.div`
+export const SearchSVGWrapper = styled.div<{ isDarkTheme: boolean }>`
+    --bg: ${(props) =>
+        props.isDarkTheme ? COLORS['search-dark'] : COLORS['search-light']};
+
     width: 17px;
     height: 17px;
     margin-right: 5px;
     fill: transparent;
+    color: var(--bg);
 `;
 
 export const SearchInput = styled.input<{ isDarkTheme: boolean }>`
+    color: ${(props) =>
+        props.isDarkTheme ? COLORS['search-dark'] : COLORS['search-light']};
+
     flex-grow: 100;
     background-color: transparent;
     border: none;
@@ -36,18 +43,13 @@ export const SearchInput = styled.input<{ isDarkTheme: boolean }>`
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    color: ${(props) =>
-        props.isDarkTheme
-            ? COLORS['search-dark']
-            : COLORS['search-light']};
     outline: none;
 
     &::placeholder {
-        background-color: transparent;
         color: ${(props) =>
-            props.isDarkTheme
-                ? COLORS['search-dark']
-                : COLORS['search-light']};
+            props.isDarkTheme ? COLORS['search-dark'] : COLORS['search-light']};
+
+        background-color: transparent;
         font-style: normal;
         font-weight: 400;
         font-size: 16px;

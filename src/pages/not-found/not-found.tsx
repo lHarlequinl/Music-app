@@ -4,10 +4,10 @@ import * as Styled from './not-found.style';
 
 const NotFoundPage = () => {
     return (
-    <Styled.NotFoundPage>
-        <NotFound/>
-    </Styled.NotFoundPage>
-    )
+        <Styled.NotFoundPage>
+            <NotFound />
+        </Styled.NotFoundPage>
+    );
 };
 
 export default NotFoundPage;

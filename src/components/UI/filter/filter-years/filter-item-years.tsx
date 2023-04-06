@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import * as Styled from './filter-years.style';
+import { ThemeContext } from '../../../contexts/theme-context/theme-context';
 
 const FilterItemYears = () => {
+    const { isDarkTheme } = useContext(ThemeContext);
+
     return (
         <Styled.FilterItemsYearWrapper>
             <label htmlFor="year-filter">
@@ -11,7 +14,7 @@ const FilterItemYears = () => {
                     type="radio"
                     value="new"
                 />
-                <Styled.FilterYearLabel htmlFor="year-filter-new">
+                <Styled.FilterYearLabel isDarkTheme={isDarkTheme} htmlFor="year-filter-new">
                     Более новые
                 </Styled.FilterYearLabel>
 
@@ -21,7 +24,7 @@ const FilterItemYears = () => {
                     type="radio"
                     value="old"
                 />
-                <Styled.FilterYearLabel htmlFor="year-filter-old">
+                <Styled.FilterYearLabel isDarkTheme={isDarkTheme} htmlFor="year-filter-old">
                     Более старые
                 </Styled.FilterYearLabel>
             </label>

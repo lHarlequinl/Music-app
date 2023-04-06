@@ -3,6 +3,8 @@ import { ShowHideMenu, MenuPropsLink } from '../../../../types';
 import * as Styled from './menu.style';
 import { NavLink } from 'react-router-dom';
 import { ThemeContext } from '../../../contexts/theme-context/theme-context';
+import DarkThemeIcon from '../../../icons/dark-theme';
+import LightThemeIcon from '../../../icons/light-theme';
 
 const MenuList = ({ text }: MenuPropsLink) => {
     const { isDarkTheme } = useContext(ThemeContext);
@@ -12,10 +14,6 @@ const MenuList = ({ text }: MenuPropsLink) => {
 
 const Menu = ({ menuActive }: ShowHideMenu) => {
     const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
-
-    const currentThemeIcon = () => {
-        return isDarkTheme ? '../img/theme-dark.png' : '../img/theme-white.png';
-    };
 
     return (
         <Styled.Menu active={menuActive}>
@@ -29,10 +27,14 @@ const Menu = ({ menuActive }: ShowHideMenu) => {
                 <NavLink to="/login">
                     <MenuList text="Выйти" />
                 </NavLink>
-                <Styled.ThemeToggleButton
-                    src={currentThemeIcon()}
+                <Styled.ThemeToggleButtonWrapper
+                    isDarkTheme={isDarkTheme}
                     onClick={toggleTheme}
-                />
+                >
+                    {isDarkTheme 
+                        ? <DarkThemeIcon /> 
+                        : <LightThemeIcon />}
+                </Styled.ThemeToggleButtonWrapper>
             </Styled.MenuList>
         </Styled.Menu>
     );

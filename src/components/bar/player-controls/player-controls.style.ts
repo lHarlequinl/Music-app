@@ -12,84 +12,106 @@ export const PlayerButton = styled.div`
     align-items: center;
 `;
 
-export const PrevIconWrapper = styled.div`
+export const PrevIconWrapper = styled.div<{ isDarkTheme: boolean }>`
+    --color: ${(props) => (props.isDarkTheme ? '#D9D9D9' : '#B1B1B1')};
+    --color-hover: ${(props) => (props.isDarkTheme ? '#ACACAC' : '#707070')};
+    --color-active: ${(props) => (props.isDarkTheme ? '#D9D9D9' : '#B1B1B1')};
+
     width: 15px;
     height: 14px;
     margin-right: 23px;
-    stroke: #d9d9d9;
     cursor: pointer;
+    color: var(--color);
 
     :hover {
-        stroke: #696969;
-    }
+        color: var(--color-hover);
 
     :active {
-        stroke: #d9d9d9;
-    }
+        color: var(--color-active);
 `;
 
-export const PlayIconWrapper = styled.div`
+export const PlayIconWrapper = styled.div<{ isDarkTheme: boolean }>`
+    --color: ${(props) => (props.isDarkTheme ? '#D9D9D9' : '#B1B1B1')};
+    --color-hover: ${(props) => (props.isDarkTheme ? '#ACACAC' : '#707070')};
+    --color-active: ${(props) => (props.isDarkTheme ? '#D9D9D9' : '#B1B1B1')};
+
     width: 22px;
     height: 20px;
+    display: flex;
+    justify-content: center;
     margin-right: 23px;
-    stroke: #d9d9d9;
     cursor: pointer;
+    color: var(--color);
 
     :hover {
-        stroke: #696969;
+        color: var(--color-hover);
     }
 
     :active {
-        stroke: #d9d9d9;
+        color: var(--color-active);
     }
 `;
 
-export const NextIconWrapper = styled.div`
+export const NextIconWrapper = styled.div<{ isDarkTheme: boolean }>`
+    --color: ${(props) => (props.isDarkTheme ? '#D9D9D9' : '#B1B1B1')};
+    --color-hover: ${(props) => (props.isDarkTheme ? '#ACACAC' : '#707070')};
+    --color-active: ${(props) => (props.isDarkTheme ? '#D9D9D9' : '#B1B1B1')};
+
     width: 15px;
     height: 14px;
     margin-right: 28px;
-    stroke: #d9d9d9;
     cursor: pointer;
+    color: var(--color);
 
     :hover {
-        stroke: #696969;
+        color: var(--color-hover);
     }
 
     :active {
-        stroke: #d9d9d9;
+        color: var(--color-active);
     }
 `;
 
-export const RepeatIconWrapper = styled.div`
+export const RepeatIconWrapper = styled.div<{ isDarkTheme: boolean }>`
+    --color: ${(props) => (props.isDarkTheme ? '#696969' : '#B1B1B1')};
+    --color-hover: ${(props) => (props.isDarkTheme ? '#ACACAC' : '#707070')};
+    --color-active: ${(props) => (props.isDarkTheme ? '#D9D9D9' : '#000000')};
+
     width: 18px;
     height: 12px;
+    display: flex;
+    align-items: center;
     fill: transparent;
-    stroke: #696969;
     margin-right: 24px;
     cursor: pointer;
+    color: var(--color);
 
     :hover {
-        stroke: #cccccc;
-    }
+        color: var(--color-hover);
 
     :active {
-        stroke: #ffffff;
+        color: var(--color-active);
     }
 `;
 
-export const ShuffleIconWrapper = styled.div`
+export const ShuffleIconWrapper = styled.div<{ isDarkTheme: boolean }>`
+    --color: ${(props) => (props.isDarkTheme ? '#696969' : '#B1B1B1')};
+    --color-hover: ${(props) => (props.isDarkTheme ? '#ACACAC' : '#707070')};
+    --color-active: ${(props) => (props.isDarkTheme ? '#D9D9D9' : '#000000')};
+
     width: 19px;
     height: 12px;
+    display: flex;
+    align-items: center;
     fill: transparent;
-    stroke: #696969;
     margin-right: 24px;
     cursor: pointer;
+    color: var(--color);
 
     :hover {
-        stroke: #cccccc;
-    }
+        color: var(--color-hover);
 
     :active {
-        stroke: #ffffff;
+        color: var(--color-active);
     }
 `;

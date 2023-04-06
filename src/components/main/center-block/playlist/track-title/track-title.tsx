@@ -4,8 +4,8 @@ import {
     SkeletonImage,
     Skeleton,
 } from '../../../../UI/skeletons/skeletons.style';
-import SvgImage from '../../../../../components/svg/svg-image';
 import { ThemeContext } from '../../../../contexts/theme-context/theme-context';
+import NoteIcon from '../../../../icons/note';
 
 interface PropsType {
     isLoading: boolean;
@@ -26,12 +26,9 @@ const TrackTitle = ({
                 {isLoading === true ? (
                     <SkeletonImage />
                 ) : (
-                    <Styled.TrackTitleImage>
-                        <Styled.TrackSVGWrapper>
-                            <SvgImage
-                                href="/img/icon/sprite.svg#icon-note"
-                                ariaLabel={'music'}
-                            />
+                    <Styled.TrackTitleImage isDarkTheme={isDarkTheme}>
+                        <Styled.TrackSVGWrapper isDarkTheme={isDarkTheme}>
+                            <NoteIcon aria-label={'music'} />
                         </Styled.TrackSVGWrapper>
                     </Styled.TrackTitleImage>
                 )}
@@ -40,7 +37,10 @@ const TrackTitle = ({
                 {isLoading === true ? (
                     <Skeleton />
                 ) : (
-                    <Styled.TrackTitleLink isDarkTheme={isDarkTheme} href={trackTitleLink}>
+                    <Styled.TrackTitleLink
+                        isDarkTheme={isDarkTheme}
+                        href={trackTitleLink}
+                    >
                         {trackTitleText}
                         <Styled.TrackTitleSpan></Styled.TrackTitleSpan>
                     </Styled.TrackTitleLink>

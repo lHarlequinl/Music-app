@@ -1,10 +1,5 @@
 import styled from 'styled-components';
 
-const COLORS = {
-    'title-dark': '#FFFFFF',
-    'title-light': '#000000',
-};
-
 export const SidebarUser = styled.div`
     display: flex;
     flex-direction: row;
@@ -14,14 +9,12 @@ export const SidebarUser = styled.div`
 `;
 
 export const SidebarUserName = styled.p<{ isDarkTheme: boolean }>`
+    color: ${(props) => (props.isDarkTheme ? '#FFFFFF' : '#000000')};
+
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    color: ${(props) =>
-        props.isDarkTheme
-            ? COLORS['title-dark']
-            : COLORS['title-light']};
     margin-right: 16px;
 `;
 

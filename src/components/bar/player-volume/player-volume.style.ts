@@ -20,11 +20,13 @@ export const PlayerVolumeImageWrapper = styled.div`
     margin-right: 17px;
 `;
 
-export const PlayerVolumeSVGWrapper = styled.div`
+export const PlayerVolumeSVGWrapper = styled.div<{ isDarkTheme: boolean }>`
+    --color: ${(props) => (props.isDarkTheme ? '#D9D9D9' : '#B1B1B1')};
+
     display: flex;
     width: 100%;
     height: 100%;
-    fill: transparent;
+    color: var(--color);
 `;
 
 export const PlayerVolumeProgressWrapper = styled.div`
@@ -45,6 +47,7 @@ export const PlayerVolumeProgressLine = styled.input<{ isDarkTheme: boolean }>`
         border-color: transparent;
         color: transparent;
     }
+
     ::-webkit-slider-thumb {
         -webkit-appearance: none;
         background: ${(props) => (props.isDarkTheme ? '#1a1a1a' : '#FFFFFF')};
@@ -56,6 +59,7 @@ export const PlayerVolumeProgressLine = styled.input<{ isDarkTheme: boolean }>`
         cursor: pointer;
         margin-top: -6px;
     }
+    
     ::-webkit-slider-runnable-track {
         width: 100%;
         height: 0;

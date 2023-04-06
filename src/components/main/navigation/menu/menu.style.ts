@@ -1,11 +1,5 @@
 import styled from 'styled-components';
 
-const COLORS = {
-    'menu-link-dark': '#FFFFFF',
-    'menu-link-light': '#000000',
-    'menu-link-hover': '#D9B6FF',
-};
-
 export const Menu = styled.div<{ active: boolean }>`
     display: block;
     visibility: visible;
@@ -15,16 +9,18 @@ export const Menu = styled.div<{ active: boolean }>`
 `;
 
 export const MenuItem = styled.li<{ isDarkTheme: boolean }>`
-    padding: 5px 0;
     color: ${(props) =>
         props.isDarkTheme
-            ? COLORS['menu-link-dark']
-            : COLORS['menu-link-light']};
+            ? '#FFFFFF'
+            : '#000000'};
+
+    padding: 5px 0;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
+    
     :hover {
-        color: ${COLORS['menu-link-hover']};
+        color: ${'#D9B6FF'};
     }
 `;
 
@@ -35,7 +31,10 @@ export const MenuList = styled.ul`
     padding: 18px 0 10px 0;
 `;
 
-export const ThemeToggleButton = styled.img`
+export const ThemeToggleButtonWrapper = styled.div<{ isDarkTheme: boolean }>`
+    --color: ${(props) => (props.isDarkTheme ? '#FFFFFF' : '#000000')};
+
     cursor: pointer;
+    color: var(--color);
     width: 39px;
 `;

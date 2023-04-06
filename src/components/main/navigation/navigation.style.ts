@@ -1,16 +1,11 @@
 import styled from 'styled-components';
 
-const COLORS = {
-    'dark-background': '#1C1C1C',
-    'light-background': '#F6F5F3',
-};
-
 export const Nav = styled.nav<{ isDarkTheme: boolean }>`
     width: 244px;
     background-color: ${(props) =>
         props.isDarkTheme
-            ? COLORS['dark-background']
-            : COLORS['light-background']};
+            ? '#1C1C1C'
+            : '#F6F5F3'};
     padding: 20px 0 20px 36px;
 `;
 

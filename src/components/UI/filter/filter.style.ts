@@ -1,12 +1,5 @@
 import styled from 'styled-components';
 
-const COLORS = {
-    'dark-filter': '#FFFFFF',
-    'light-filter': '#000000',
-    'dark-filter-background': '#4b4949',
-    'light-filter-background': '#000000',
-};
-
 export const FilterWrapper = styled.div`
     display: flex;
     flex-direction: row;
@@ -15,24 +8,24 @@ export const FilterWrapper = styled.div`
 `;
 
 export const FilterTitle = styled.div<{ isDarkTheme: boolean }>`
+    color: ${(props) => (props.isDarkTheme ? '#FFFFFF' : '#000000')};
+
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
     margin-right: 15px;
-    color: ${(props) =>
-        props.isDarkTheme ? COLORS['dark-filter'] : COLORS['light-filter']};
 `;
 
 export const FilterButtonWrapper = styled.div<{ isDarkTheme: boolean }>`
+    color: ${(props) => (props.isDarkTheme ? '#FFFFFF' : '#000000')};
+
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    color: ${(props) =>
-        props.isDarkTheme ? COLORS['dark-filter'] : COLORS['light-filter']};
 
     &:not(:last-child) {
         margin-right: 10px;
@@ -58,7 +51,10 @@ export const FilterItemsWrapperGenre = styled(FilterItemsWrapperAuthor)`
     display: ${(props) => (props.isActive === 'genre' ? 'block' : 'none')};
 `;
 
-export const FilterItemsWrapperYear = styled.div<{ isActive: string | null }>`
+export const FilterItemsWrapperYear = styled.div<{
+    isActive: string | null;
+    isDarkTheme: boolean;
+}>`
     display: ${(props) => (props.isActive === 'year' ? 'block' : 'none')};
     position: absolute;
     top: 50px;
@@ -66,6 +62,7 @@ export const FilterItemsWrapperYear = styled.div<{ isActive: string | null }>`
     width: 360px;
     background: #313131;
     border-radius: 12px;
+    background: ${(props) => (props.isDarkTheme ? '#313131' : '#F6F5F3')};
 `;
 
 export const FilterItems = styled.div<{ isDarkTheme: boolean }>`
@@ -76,12 +73,14 @@ export const FilterItems = styled.div<{ isDarkTheme: boolean }>`
     row-gap: 28px;
     background: transparent;
     overflow-y: scroll;
+
     &::-webkit-scrollbar {
         width: 4px;
         height: 237px;
         background: ${(props) => (props.isDarkTheme ? '#313131' : '#FFFFFF')};
         border-radius: 10px;
     }
+
     &::-webkit-scrollbar-thumb {
         width: 4px;
         height: 65px;
