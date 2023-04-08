@@ -8,9 +8,20 @@ export const Menu = styled.div<{ active: boolean }>`
     transition: transform 0.5s;
 `;
 
-export const MenuItem = styled.li`
+export const MenuItem = styled.li<{ isDarkTheme: boolean }>`
+    color: ${(props) =>
+        props.isDarkTheme
+            ? '#FFFFFF'
+            : '#000000'};
+
     padding: 5px 0;
-    margin-bottom: 16px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    
+    :hover {
+        color: ${'#D9B6FF'};
+    }
 `;
 
 export const MenuList = styled.ul`
@@ -20,18 +31,10 @@ export const MenuList = styled.ul`
     padding: 18px 0 10px 0;
 `;
 
-export const MenuLink = styled.a`
-    color: #ffffff;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
+export const ThemeToggleButtonWrapper = styled.div<{ isDarkTheme: boolean }>`
+    --color: ${(props) => (props.isDarkTheme ? '#FFFFFF' : '#000000')};
 
-    :hover {
-        color: #d9b6ff;
-    }
-`;
-
-export const MenuThemeInterface = styled.img`
     cursor: pointer;
+    color: var(--color);
     width: 39px;
 `;

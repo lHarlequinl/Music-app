@@ -1,5 +1,6 @@
 import React from 'react';
 import * as Styled from '../../components/not-found/not-found.style';
+import { NavLink } from 'react-router-dom';
 
 const NotFound = () => {
     return (
@@ -11,7 +12,11 @@ const NotFound = () => {
             <Styled.NotFoundText>
                 Возможно, она была удалена или перенесена на другой адрес
             </Styled.NotFoundText>
-            <Styled.NotFoundButton>Вернуться на главную</Styled.NotFoundButton>
+            <NavLink to="/">
+                <Styled.NotFoundButton>
+                    Вернуться на главную
+                </Styled.NotFoundButton>
+            </NavLink>
         </Styled.NotFoundWrapper>
     );
 };

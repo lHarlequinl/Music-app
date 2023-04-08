@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import FilterItemYears from './filter-years/filter-item-years';
 import FilterItem from './filter-item/filter-item';
 import { trackData } from '../../../mocks/track-data';
 import FilterCategories from './filter-categories/filter-categories';
 import * as Styled from './filter.style';
+import { ThemeContext } from '../../contexts/theme-context/theme-context';
 
 const Filter = () => {
     const [isActive, setActive] = useState<'author' | 'year' | 'genre' | null>(
@@ -28,10 +29,15 @@ const Filter = () => {
         Genre.Classic,
     ];
 
+    const { isDarkTheme } = useContext(ThemeContext);
+
     return (
         <Styled.FilterWrapper>
-            <Styled.FilterTitle>Искать по:</Styled.FilterTitle>
+            <Styled.FilterTitle isDarkTheme={isDarkTheme}>
+                Искать по:
+            </Styled.FilterTitle>
             <Styled.FilterButtonWrapper
+                isDarkTheme={isDarkTheme}
                 onClick={() =>
                     setActive((prevState) =>
                         prevState === null ? 'author' : null
@@ -42,8 +48,11 @@ const Filter = () => {
                     text="исполнителю"
                     isActive={isActive === 'author'}
                 />
-                <Styled.FilterItemsWrapperAuthor isActive={isActive}>
-                    <Styled.FilterItems>
+                <Styled.FilterItemsWrapperAuthor
+                    isDarkTheme={isDarkTheme}
+                    isActive={isActive}
+                >
+                    <Styled.FilterItems isDarkTheme={isDarkTheme}>
                         {trackData[0].tracks.map((item) => (
                             <FilterItem
                                 key={item.trackTitleText}
@@ -56,6 +65,7 @@ const Filter = () => {
             </Styled.FilterButtonWrapper>
 
             <Styled.FilterButtonWrapper
+                isDarkTheme={isDarkTheme}
                 onClick={() =>
                     setActive((prevState) =>
                         prevState === null ? 'year' : null
@@ -66,12 +76,16 @@ const Filter = () => {
                     text="году выпуска"
                     isActive={isActive === 'year'}
                 />
-                <Styled.FilterItemsWrapperYear isActive={isActive}>
+                <Styled.FilterItemsWrapperYear
+                    isActive={isActive}
+                    isDarkTheme={isDarkTheme}
+                >
                     <FilterItemYears />
                 </Styled.FilterItemsWrapperYear>
             </Styled.FilterButtonWrapper>
 
             <Styled.FilterButtonWrapper
+                isDarkTheme={isDarkTheme}
                 onClick={() =>
                     setActive((prevState) =>
                         prevState === null ? 'genre' : null
@@ -82,8 +96,11 @@ const Filter = () => {
                     text="жанру"
                     isActive={isActive === 'genre'}
                 />
-                <Styled.FilterItemsWrapperGenre isActive={isActive}>
-                    <Styled.FilterItems>
+                <Styled.FilterItemsWrapperGenre
+                    isDarkTheme={isDarkTheme}
+                    isActive={isActive}
+                >
+                    <Styled.FilterItems isDarkTheme={isDarkTheme}>
                         {genre.map((item) => (
                             <FilterItem key={item} text={item} href="#" />
                         ))}

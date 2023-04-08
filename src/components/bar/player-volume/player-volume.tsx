@@ -1,6 +1,9 @@
-import React from 'react';
-import SvgImage from '../../svg/svg-image';
+import React, { useContext } from 'react';
 import * as Styled from './player-volume.style';
+import { ThemeContext } from '../../contexts/theme-context/theme-context';
+import VolumetIcon from '../../icons/volume';
+import VolumeOffIcon from '../../icons/volume-off';
+
 interface Props {
     value: number;
     onVolumeToggle: () => void;
@@ -12,25 +15,22 @@ const PlayerVolume = ({
     onVolumeToggle,
     onVolumeOn = true,
 }: Props) => {
+    const { isDarkTheme } = useContext(ThemeContext);
+
     return (
         <Styled.PlayerVolumeBlock>
             <Styled.PlayerVolumeContent>
                 <Styled.PlayerVolumeImageWrapper>
-                    <Styled.PlayerVolumeSVGWrapper
+                    <Styled.PlayerVolumeSVGWrapper isDarkTheme={isDarkTheme}
                         onClick={() => onVolumeToggle()}
                     >
-                        <SvgImage
-                            href={
-                                onVolumeOn
-                                    ? '/img/icon/sprite.svg#icon-volume'
-                                    : '/img/icon/sprite.svg#icon-volume-off'
-                            }
-                            ariaLabel="volume"
-                        />
+                    {isDarkTheme 
+                        ? <VolumetIcon aria-label="volume"/> 
+                        : <VolumeOffIcon aria-label="volume-off"/>}
                     </Styled.PlayerVolumeSVGWrapper>
                 </Styled.PlayerVolumeImageWrapper>
                 <Styled.PlayerVolumeProgressWrapper>
-                    <Styled.PlayerVolumeProgressLine
+                    <Styled.PlayerVolumeProgressLine isDarkTheme={isDarkTheme}
                         type="range"
                         name="volume"
                         min="0"

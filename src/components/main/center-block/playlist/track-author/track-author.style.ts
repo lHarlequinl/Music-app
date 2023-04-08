@@ -8,11 +8,13 @@ export const TrackAuthor = styled.div`
     overflow: hidden;
 `;
 
-export const TrackAuthorLink = styled.a`
+export const TrackAuthorLink = styled.a<{ isDarkTheme: boolean }>`
+    color: ${(props) =>
+    props.isDarkTheme ? '#FFFFFF' : '#000000'};
+
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    color: #ffffff;
     text-align: left;
 `;

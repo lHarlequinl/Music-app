@@ -16,7 +16,9 @@ export const TrackImageWrapper = styled.div`
     overflow: hidden;
 `;
 
-export const TrackTitleImage = styled.div`
+export const TrackTitleImage = styled.div<{ isDarkTheme: boolean }>`
+    --bg-color: ${props => props.isDarkTheme ? '#313131' : '#F6F4F4'};
+
     width: 51px;
     height: 51px;
     padding: 16px;
@@ -25,13 +27,15 @@ export const TrackTitleImage = styled.div`
     align-items: center;
     justify-content: center;
     margin-right: 17px;
+    background-color: var(--bg-color);
 `;
 
-export const TrackSVGWrapper = styled.div`
+export const TrackSVGWrapper = styled.div<{ isDarkTheme: boolean }>`
+    --color: ${(props) => (props.isDarkTheme ? '#4E4E4E' : '#B1B1B1')};
+
     width: 18px;
     height: 17px;
-    fill: transparent;
-    stroke: #4e4e4e;
+    color: var(--color);
 `;
 
 export const TrackTitleText = styled.div`
@@ -40,12 +44,14 @@ export const TrackTitleText = styled.div`
     overflow: hidden;
 `;
 
-export const TrackTitleLink = styled.a`
+export const TrackTitleLink = styled.a<{ isDarkTheme: boolean }>`
+    color: ${(props) =>
+    props.isDarkTheme ? '#FFFFFF' : '#000000'};
+
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    color: #ffffff;
 `;
 
 export const TrackTitleSpan = styled.span`

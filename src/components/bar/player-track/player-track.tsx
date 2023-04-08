@@ -1,8 +1,11 @@
-import React from 'react';
-import SvgImage from '../../svg/svg-image';
+import React, { useContext } from 'react';
 import * as Styled from './player-track.style';
 import { Track } from '../../../types';
 import { SkeletonImage, Skeleton } from '../../UI/skeletons/skeletons.style';
+import { ThemeContext } from '../../contexts/theme-context/theme-context';
+import NoteIcon from '../../icons/note';
+import LikeIcon from '../../icons/like';
+import DislikeIcon from '../../icons/dislike';
 
 const PlayerTrack = ({
     trackLink,
@@ -11,18 +14,17 @@ const PlayerTrack = ({
     authorName,
     isLoading = true,
 }: Track) => {
+    const { isDarkTheme } = useContext(ThemeContext);
+
     return (
         <Styled.TrackPlay>
             <Styled.TrackPlayContain>
-                <Styled.TrackImageWrapper>
+                <Styled.TrackImageWrapper isDarkTheme={isDarkTheme}>
                     {isLoading === true ? (
                         <SkeletonImage />
                     ) : (
-                        <Styled.TrackPlaySVGWrapper>
-                            <SvgImage
-                                href="/img/icon/sprite.svg#icon-note"
-                                ariaLabel="music"
-                            />
+                        <Styled.TrackPlaySVGWrapper isDarkTheme={isDarkTheme}>
+                            <NoteIcon aria-label="music" />
                         </Styled.TrackPlaySVGWrapper>
                     )}
                 </Styled.TrackImageWrapper>
@@ -30,7 +32,10 @@ const PlayerTrack = ({
                     {isLoading === true ? (
                         <Skeleton />
                     ) : (
-                        <Styled.TrackPlayAuthorLink href={trackLink}>
+                        <Styled.TrackPlayAuthorLink
+                            isDarkTheme={isDarkTheme}
+                            href={trackLink}
+                        >
                             {trackName}
                         </Styled.TrackPlayAuthorLink>
                     )}
@@ -39,7 +44,10 @@ const PlayerTrack = ({
                     {isLoading === true ? (
                         <Skeleton />
                     ) : (
-                        <Styled.TrackPlayAlbumLink href={authorLink}>
+                        <Styled.TrackPlayAlbumLink
+                            isDarkTheme={isDarkTheme}
+                            href={authorLink}
+                        >
                             {authorName}
                         </Styled.TrackPlayAlbumLink>
                     )}
@@ -47,19 +55,13 @@ const PlayerTrack = ({
             </Styled.TrackPlayContain>
             <Styled.TrackPlayLikeDisWrapper>
                 <Styled.TrackPlayLikeButton>
-                    <Styled.TrackPlayLikeDisButtonSVGWrapper>
-                        <SvgImage
-                            href="/img/icon/sprite.svg#icon-like"
-                            ariaLabel="like"
-                        />
+                    <Styled.TrackPlayLikeDisButtonSVGWrapper isDarkTheme={isDarkTheme}>
+                        <LikeIcon aria-label="like" />
                     </Styled.TrackPlayLikeDisButtonSVGWrapper>
                 </Styled.TrackPlayLikeButton>
                 <Styled.TrackPlayDisButton>
-                    <Styled.TrackPlayLikeDisButtonSVGWrapper>
-                        <SvgImage
-                            href="/img/icon/sprite.svg#icon-dislike"
-                            ariaLabel="dislike"
-                        />
+                    <Styled.TrackPlayLikeDisButtonSVGWrapper isDarkTheme={isDarkTheme}>
+                        <DislikeIcon aria-label="dislike" />
                     </Styled.TrackPlayLikeDisButtonSVGWrapper>
                 </Styled.TrackPlayDisButton>
             </Styled.TrackPlayLikeDisWrapper>

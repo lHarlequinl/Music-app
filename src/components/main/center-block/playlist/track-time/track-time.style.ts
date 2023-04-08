@@ -11,20 +11,28 @@ export const TrackTimeWrapper = styled.div`
     align-items: center;
 `;
 
-export const TrackTimeSVGWRapper = styled.div`
+export const TrackTimeSVGWRapper = styled.div<{
+    isDarkTheme: boolean;
+}>`
+    --color: ${(props) => (props.isDarkTheme ? '#696969' : '#B1B1B1')};
+    --color-hover: ${(props) => (props.isDarkTheme ? '#ACACAC' : '#707070')};
+    --color-active: ${(props) => (props.isDarkTheme ? '#FFFFFF' : 'transparent')};
+    --color-active-fill: ${(props) => (props.isDarkTheme ? '#696969' : '#AD61FF')};
+
     width: 14px;
     height: 12px;
     margin-right: 17px;
+    color: var(--color);
     fill: transparent;
-    stroke: #696969;
     cursor: pointer;
 
     :hover {
-        stroke: #cccccc;
+        color: var(--color-hover);
     }
 
     :active {
-        fill: #696969;
+        fill: var(--color-active-fill);
+        color: var(--color);
     }
 `;
 

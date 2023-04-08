@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 
-export const Nav = styled.nav`
+export const Nav = styled.nav<{ isDarkTheme: boolean }>`
     width: 244px;
-    background-color: #181818;
+    background-color: ${(props) =>
+        props.isDarkTheme
+            ? '#1C1C1C'
+            : '#F6F5F3'};
     padding: 20px 0 20px 36px;
 `;
 

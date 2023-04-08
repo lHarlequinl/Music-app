@@ -7,7 +7,9 @@ export const FilterWrapper = styled.div`
     margin-bottom: 51px;
 `;
 
-export const FilterTitle = styled.div`
+export const FilterTitle = styled.div<{ isDarkTheme: boolean }>`
+    color: ${(props) => (props.isDarkTheme ? '#FFFFFF' : '#000000')};
+
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -15,7 +17,9 @@ export const FilterTitle = styled.div`
     margin-right: 15px;
 `;
 
-export const FilterButtonWrapper = styled.div`
+export const FilterButtonWrapper = styled.div<{ isDarkTheme: boolean }>`
+    color: ${(props) => (props.isDarkTheme ? '#FFFFFF' : '#000000')};
+
     position: relative;
     display: flex;
     flex-direction: column;
@@ -30,6 +34,7 @@ export const FilterButtonWrapper = styled.div`
 
 export const FilterItemsWrapperAuthor = styled.div<{
     isActive: string | null;
+    isDarkTheme: boolean;
 }>`
     display: ${(props) => (props.isActive === 'author' ? 'block' : 'none')};
     position: absolute;
@@ -38,7 +43,7 @@ export const FilterItemsWrapperAuthor = styled.div<{
     width: 248px;
     height: 305px;
     padding: 34px;
-    background: #313131;
+    background: ${(props) => (props.isDarkTheme ? '#313131' : '#F6F5F3')};
     border-radius: 12px;
 `;
 
@@ -46,17 +51,21 @@ export const FilterItemsWrapperGenre = styled(FilterItemsWrapperAuthor)`
     display: ${(props) => (props.isActive === 'genre' ? 'block' : 'none')};
 `;
 
-export const FilterItemsWrapperYear = styled.div<{ isActive: string | null }>`
+export const FilterItemsWrapperYear = styled.div<{
+    isActive: string | null;
+    isDarkTheme: boolean;
+}>`
     display: ${(props) => (props.isActive === 'year' ? 'block' : 'none')};
     position: absolute;
     top: 50px;
-    padding: 34px;
-    width: 403px;
+    padding: 10px 15px;
+    width: 360px;
     background: #313131;
     border-radius: 12px;
+    background: ${(props) => (props.isDarkTheme ? '#313131' : '#F6F5F3')};
 `;
 
-export const FilterItems = styled.div`
+export const FilterItems = styled.div<{ isDarkTheme: boolean }>`
     max-height: 237px;
     display: flex;
     flex-direction: column;
@@ -64,16 +73,18 @@ export const FilterItems = styled.div`
     row-gap: 28px;
     background: transparent;
     overflow-y: scroll;
+
     &::-webkit-scrollbar {
         width: 4px;
         height: 237px;
-        background: #4b4949;
+        background: ${(props) => (props.isDarkTheme ? '#313131' : '#FFFFFF')};
         border-radius: 10px;
     }
+
     &::-webkit-scrollbar-thumb {
         width: 4px;
         height: 65px;
-        background: #ffffff;
+        background: ${(props) => (props.isDarkTheme ? '#FFFFFF' : '#313131')};
         border-radius: 10px;
     }
 `;
