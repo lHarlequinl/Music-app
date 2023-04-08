@@ -5,8 +5,7 @@ interface Props {
     toggleTheme?: () => void;
 }
 
-const defaultTheme = {
+export const ThemeContext = createContext<Props>({
     isDarkTheme: true,
-};
-
-export const ThemeContext = createContext<Props>(defaultTheme);
+    toggleTheme: () => {},
+});
